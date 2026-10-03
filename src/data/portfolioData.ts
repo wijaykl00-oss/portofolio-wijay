@@ -1,6 +1,7 @@
 import { ProjectItem, GalleryItem, ExperienceItem, EducationItem, ArsenalCategory } from '../types/portfolio';
 import portraitClear from '../assets/images/clear.png';
 import portraitGlasses from '../assets/images/glasses.png';
+import buddySticker from '../assets/images/buddy.png';
 import projectSaas from '../assets/images/project_saas_analytics_1791001627387.jpg';
 import projectBrand from '../assets/images/project_brand_system_1791001638996.jpg';
 import projectMobile from '../assets/images/project_mobile_experience_1791001652768.jpg';
@@ -8,10 +9,12 @@ import projectMobile from '../assets/images/project_mobile_experience_1791001652
 export const HERO_ASSETS = {
   portraitClear,
   portraitGlasses,
+  buddy: buddySticker,
   projectSaas,
   projectBrand,
   projectMobile,
 };
+
 
 
 export const PROFILE_INFO = {

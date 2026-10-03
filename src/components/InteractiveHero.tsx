@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback, useId } from 'react';
 import { Calendar, ArrowRight, Eye, Waves } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { HERO_ASSETS, PROFILE_INFO } from '../data/portfolioData';
 
 interface InteractiveHeroProps {
@@ -376,6 +377,31 @@ export const InteractiveHero: React.FC<InteractiveHeroProps> = ({ onOpenBooking,
             aria-hidden="true"
             className="absolute inset-x-0 bottom-0 h-48 pointer-events-none bg-gradient-to-t from-[#08090e] via-[#08090e]/85 to-transparent z-10"
           />
+
+          {/* Companion Sticker beside the glasses / portrait */}
+          {HERO_ASSETS.buddy && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, rotate: -8 }}
+              animate={{ opacity: 1, scale: 1, rotate: 5 }}
+              transition={{ delay: 0.3, type: 'spring', stiffness: 200, damping: 15 }}
+              whileHover={{ scale: 1.12, rotate: 12, transition: { duration: 0.2 } }}
+              whileTap={{ scale: 0.95, rotate: -4 }}
+              className="absolute -right-4 sm:-right-10 md:-right-14 top-10 sm:top-14 md:top-16 z-20 cursor-pointer pointer-events-auto"
+              title="Friend Sticker"
+            >
+              <div className="relative group">
+                <img
+                  src={HERO_ASSETS.buddy}
+                  alt="Friend sticker"
+                  className="w-20 sm:w-28 md:w-32 object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.65)] select-none pointer-events-none transition-transform"
+                />
+                {/* Playful tooltip on hover */}
+                <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-purple-600/90 backdrop-blur-md text-white text-[10px] font-bold px-2 py-0.5 rounded-full border border-purple-400/40 whitespace-nowrap shadow-lg pointer-events-none">
+                  😜 Yo!
+                </span>
+              </div>
+            </motion.div>
+          )}
         </div>
 
         {/* Minimal, elegant interactive controls */}
