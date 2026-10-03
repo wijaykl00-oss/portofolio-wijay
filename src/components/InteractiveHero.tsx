@@ -13,8 +13,8 @@ export const InteractiveHero: React.FC<InteractiveHeroProps> = ({ onOpenBooking,
   const maskId = useId().replace(/:/g, ''); // unique valid SVG mask ID
 
   // Position of the fluid water wave center
-  const [fluidPos, setFluidPos] = useState({ x: 210, y: 160 });
-  const [targetPos, setTargetPos] = useState({ x: 210, y: 160 });
+  const [fluidPos, setFluidPos] = useState({ x: 240, y: 140 });
+  const [targetPos, setTargetPos] = useState({ x: 240, y: 140 });
   const [blobPath, setBlobPath] = useState<string>('');
   
   // Motion blur dynamic vectors
@@ -34,8 +34,8 @@ export const InteractiveHero: React.FC<InteractiveHeroProps> = ({ onOpenBooking,
   // Generate organic, irregular morphing fluid water wave path with dynamic motion elongation
   const createOrganicWaterBlob = (cx: number, cy: number, time: number, vx = 0, vy = 0) => {
     const pointsCount = 16;
-    const baseRadiusX = 115;
-    const baseRadiusY = 88;
+    const baseRadiusX = 100;
+    const baseRadiusY = 78;
     const coords: [number, number][] = [];
 
     // Velocity stretch: water naturally elongates in the direction of motion
@@ -99,10 +99,10 @@ export const InteractiveHero: React.FC<InteractiveHeroProps> = ({ onOpenBooking,
       if (!isManualMode && !isInteractive) {
         // Natural undulating wave trajectory that sweeps across the eyes smoothly
         const centerX = width * 0.5;
-        const eyeLevelY = height * 0.38;
+        const eyeLevelY = height * 0.28;
 
-        const targetX = centerX + Math.sin(animTimeRef.current * 0.85) * (width * 0.32) + Math.cos(animTimeRef.current * 0.4) * 25;
-        const targetY = eyeLevelY + Math.sin(animTimeRef.current * 1.7) * 35 + Math.cos(animTimeRef.current * 0.9) * 18;
+        const targetX = centerX + Math.sin(animTimeRef.current * 0.85) * (width * 0.28) + Math.cos(animTimeRef.current * 0.4) * 20;
+        const targetY = eyeLevelY + Math.sin(animTimeRef.current * 1.7) * 25 + Math.cos(animTimeRef.current * 0.9) * 12;
 
         currentX = currentX + (targetX - currentX) * 0.07;
         currentY = currentY + (targetY - currentY) * 0.07;
@@ -278,7 +278,7 @@ export const InteractiveHero: React.FC<InteractiveHeroProps> = ({ onOpenBooking,
           With subtle directional motion blur on fluid wave
           and dark contrast fade blending seamlessly into the body
           ======================================================== */}
-      <div className="relative w-full max-w-lg mx-auto flex flex-col items-center mb-8 z-10">
+      <div className="relative w-full max-w-2xl mx-auto flex flex-col items-center mb-8 z-10">
         
         {/* Soft atmospheric ambient glow behind the subject with reverse parallax */}
         <div 
@@ -287,7 +287,7 @@ export const InteractiveHero: React.FC<InteractiveHeroProps> = ({ onOpenBooking,
             transform: `translate3d(${-parallax.shiftX * 1.5}px, ${-parallax.shiftY * 1.5}px, 0)`,
             willChange: 'transform',
           }}
-          className="absolute -top-10 left-1/2 -translate-x-1/2 w-[460px] h-[460px] bg-gradient-to-b from-purple-600/20 via-violet-700/10 to-transparent blur-3xl rounded-full pointer-events-none transition-transform duration-75 ease-out"
+          className="absolute -top-12 left-1/2 -translate-x-1/2 w-[520px] sm:w-[640px] h-[520px] sm:h-[640px] bg-gradient-to-b from-purple-600/30 via-violet-700/15 to-transparent blur-3xl rounded-full pointer-events-none transition-transform duration-75 ease-out"
         />
 
         {/* SVG Definition with Subtle Directional Motion Blur Filter */}
@@ -326,7 +326,7 @@ export const InteractiveHero: React.FC<InteractiveHeroProps> = ({ onOpenBooking,
             transformStyle: 'preserve-3d',
             willChange: 'transform',
           }}
-          className="relative w-[340px] sm:w-[440px] aspect-[4/4.4] cursor-grab active:cursor-grabbing select-none touch-none transition-transform duration-75 ease-out"
+          className="relative w-[300px] sm:w-[420px] md:w-[480px] aspect-[260/358] cursor-grab active:cursor-grabbing select-none touch-none transition-transform duration-75 ease-out"
         >
           {/* Base Layer: Portrait WITHOUT glasses - transparent cutout */}
           <img
