@@ -334,7 +334,7 @@ export const InteractiveHero: React.FC<InteractiveHeroProps> = ({ onOpenBooking,
             src={HERO_ASSETS.portraitClear}
             alt={PROFILE_INFO.name}
             referrerPolicy="no-referrer"
-            className="absolute inset-0 w-full h-full object-contain object-top pointer-events-none filter brightness-[0.98] contrast-[1.03]"
+            className="absolute inset-0 w-full h-full object-contain object-top pointer-events-none filter contrast-[1.06] saturate-[1.04] drop-shadow-[0_20px_40px_rgba(0,0,0,0.7)]"
           />
 
           {/* Reveal Layer: Portrait WITH purple sunglasses, masked with dynamic motion blur */}
@@ -352,7 +352,7 @@ export const InteractiveHero: React.FC<InteractiveHeroProps> = ({ onOpenBooking,
               src={HERO_ASSETS.portraitGlasses}
               alt="Portrait with sunglasses revealed naturally"
               referrerPolicy="no-referrer"
-              className="absolute inset-0 w-full h-full object-contain object-top pointer-events-none filter brightness-105 contrast-[1.06]"
+              className="absolute inset-0 w-full h-full object-contain object-top pointer-events-none filter brightness-[1.03] contrast-[1.08] saturate-[1.05] drop-shadow-[0_20px_40px_rgba(0,0,0,0.7)]"
             />
           </div>
 
