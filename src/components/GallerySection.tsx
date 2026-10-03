@@ -13,7 +13,7 @@ import {
   ArrowUpRight
 } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { GALLERY_ITEMS } from '../data/portfolioData';
+import { GALLERY_ITEMS, HERO_ASSETS } from '../data/portfolioData';
 import { GalleryItem } from '../types/portfolio';
 
 export const GallerySection: React.FC = () => {
@@ -92,7 +92,7 @@ export const GallerySection: React.FC = () => {
       category: newCategory,
       categoryLabel: categories.find(c => c.id === newCategory)?.label || 'Design Work',
       year: newYear,
-      image: newImageUrl.trim() || '/src/assets/images/project_saas_analytics_1791001627387.jpg',
+      image: newImageUrl.trim() || HERO_ASSETS.projectSaas,
       tags: newTools.split(',').map(t => t.trim()).filter(Boolean),
       description: newDescription.trim() || 'Custom design showcase piece.',
       impact: newImpact.trim() || 'Demonstrated outstanding visual fidelity and user engagement.',

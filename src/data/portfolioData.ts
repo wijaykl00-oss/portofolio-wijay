@@ -1,12 +1,18 @@
 import { ProjectItem, GalleryItem, ExperienceItem, EducationItem, ArsenalCategory } from '../types/portfolio';
+import portraitClear from '../assets/images/clear.png';
+import portraitGlasses from '../assets/images/glasses.png';
+import projectSaas from '../assets/images/project_saas_analytics_1791001627387.jpg';
+import projectBrand from '../assets/images/project_brand_system_1791001638996.jpg';
+import projectMobile from '../assets/images/project_mobile_experience_1791001652768.jpg';
 
 export const HERO_ASSETS = {
-  portraitClear: '/src/assets/images/hero_clear_cutout.png',
-  portraitGlasses: '/src/assets/images/hero_glasses_cutout.png',
-  projectSaas: '/src/assets/images/project_saas_analytics_1791001627387.jpg',
-  projectBrand: '/src/assets/images/project_brand_system_1791001638996.jpg',
-  projectMobile: '/src/assets/images/project_mobile_experience_1791001652768.jpg',
+  portraitClear,
+  portraitGlasses,
+  projectSaas,
+  projectBrand,
+  projectMobile,
 };
+
 
 export const PROFILE_INFO = {
   name: 'Wijaya Kusuma Bangsa',
