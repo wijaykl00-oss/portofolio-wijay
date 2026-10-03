@@ -1,0 +1,243 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #08090e;
+    color: #e2e8f0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+  }
+}
+
+/* Atmospheric purple flare streak matching reference image */
+.anamorphic-flare {
+  position: absolute;
+  width: 800px;
+  height: 260px;
+  background: radial-gradient(ellipse 65% 35% at 50% 50%, rgba(192, 132, 252, 0.45) 0%, rgba(168, 85, 247, 0.3) 30%, rgba(126, 34, 206, 0.15) 55%, transparent 75%);
+  transform: rotate(-10deg);
+  filter: blur(32px);
+  pointer-events: none;
+  animation: flareSweep 14s ease-in-out infinite alternate;
+}
+
+/* Elegant moving shimmering purple auroras ("ungu ungu berjalan silau") */
+@keyframes flareSweep {
+  0% {
+    transform: translate(-30%, -15%) rotate(-14deg) scale(0.9);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(15%, 5%) rotate(-8deg) scale(1.15);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate(-10%, 15%) rotate(-12deg) scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@keyframes auroraFlow1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.55;
+  }
+  33% {
+    transform: translate(60px, -30px) scale(1.15) rotate(10deg);
+    opacity: 0.85;
+  }
+  66% {
+    transform: translate(-40px, 40px) scale(0.9) rotate(-8deg);
+    opacity: 0.65;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.55;
+  }
+}
+
+@keyframes auroraFlow2 {
+  0% {
+    transform: translate(0, 0) scale(1.1) rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-70px, 35px) scale(0.95) rotate(-15deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(0, 0) scale(1.1) rotate(0deg);
+    opacity: 0.5;
+  }
+}
+
+@keyframes beamScan {
+  0% {
+    transform: translateX(-120%) rotate(-18deg);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.85;
+  }
+  70% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateX(180%) rotate(-18deg);
+    opacity: 0;
+  }
+}
+
+@keyframes beamScan2 {
+  0% {
+    transform: translateX(160%) rotate(-28deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.9;
+  }
+  65% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(-140%) rotate(-28deg);
+    opacity: 0;
+  }
+}
+
+@keyframes beamScan3 {
+  0% {
+    transform: translateY(-80%) rotate(12deg) scaleX(0.7);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.75;
+    transform: translateY(40%) rotate(16deg) scaleX(1.1);
+  }
+  100% {
+    transform: translateY(160%) rotate(20deg) scaleX(0.8);
+    opacity: 0;
+  }
+}
+
+.laser-ray-animated-2 {
+  position: absolute;
+  height: 2px;
+  width: 600px;
+  background: linear-gradient(90deg, transparent 0%, rgba(216, 180, 254, 0.9) 40%, rgba(244, 114, 182, 0.7) 60%, transparent 100%);
+  filter: blur(1.5px);
+  pointer-events: none;
+  animation: beamScan2 11s cubic-bezier(0.4, 0, 0.2, 1) infinite 2.5s;
+}
+
+.laser-ray-animated-3 {
+  position: absolute;
+  height: 3px;
+  width: 480px;
+  background: linear-gradient(90deg, transparent 0%, rgba(192, 132, 252, 0.95) 50%, transparent 100%);
+  filter: blur(2px);
+  pointer-events: none;
+  animation: beamScan3 14s ease-in-out infinite 5s;
+}
+
+.bg-aurora-1 {
+  animation: auroraFlow1 16s ease-in-out infinite;
+}
+
+.bg-aurora-2 {
+  animation: auroraFlow2 20s ease-in-out infinite;
+}
+
+.laser-ray-animated {
+  position: absolute;
+  height: 2.5px;
+  width: 550px;
+  background: linear-gradient(90deg, transparent 0%, rgba(233, 213, 255, 0.95) 50%, transparent 100%);
+  filter: blur(1.5px);
+  pointer-events: none;
+  animation: beamScan 9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Diagonal laser / light ray */
+.laser-ray {
+  position: absolute;
+  height: 2px;
+  width: 450px;
+  background: linear-gradient(90deg, transparent 0%, rgba(216, 180, 254, 0.8) 50%, transparent 100%);
+  transform: rotate(-15deg);
+  filter: blur(1px);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Luxury dark backdrop subtle grid */
+.tech-grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Glassmorphism card styles */
+.glass-panel {
+  background: rgba(15, 17, 26, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  background: rgba(22, 25, 38, 0.8);
+  border-color: rgba(168, 85, 247, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(147, 51, 234, 0.25);
+}
+
+/* Purple ambient glow */
+.ambient-glow {
+  background: radial-gradient(circle at 50% 30%, rgba(139, 92, 246, 0.18) 0%, rgba(99, 102, 241, 0.08) 35%, transparent 70%);
+}
+
+/* Shimmer animation */
+@keyframes bubbleFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+.animate-bubble-float {
+  animation: bubbleFloat 5s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #090a0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2438;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b4366;
+}

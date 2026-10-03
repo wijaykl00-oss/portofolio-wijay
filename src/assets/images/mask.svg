@@ -1,0 +1,18 @@
+
+<svg width="1024" height="1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="blur">
+      <feGaussianBlur stdDeviation="24" />
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" fill="black" />
+  <g filter="url(#blur)">
+    <!-- Head and hair blob -->
+    <path d="M 340 380 C 310 220, 400 90, 512 85 C 630 90, 710 220, 680 380 C 720 500, 890 600, 920 850 C 930 980, 850 1024, 512 1024 C 180 1024, 100 980, 110 850 C 130 600, 300 500, 340 380 Z" fill="white" />
+    <!-- Extra fullness for head and shoulders -->
+    <ellipse cx="512" cy="340" rx="210" ry="250" fill="white" />
+    <ellipse cx="512" cy="780" rx="380" ry="260" fill="white" />
+  </g>
+  <!-- Fade out bottom so it melts into dark contrast -->
+  <rect y="750" width="1024" height="274" fill="url(#bottomFade)" opacity="0.6" />
+</svg>
