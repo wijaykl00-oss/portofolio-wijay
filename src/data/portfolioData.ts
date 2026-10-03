@@ -19,9 +19,9 @@ export const HERO_ASSETS = {
 
 export const PROFILE_INFO = {
   name: 'Wijaya Kusuma Bangsa',
-  role: 'Creative Designer & Product Engineer',
-  tagline: 'Designing digital experiences & intelligent interfaces that accelerate brand growth.',
-  bio: 'Full-stack Product Designer and Creative Engineer blending human-centered aesthetics, design systems, and modern front-end architecture. Specializing in high-conversion SaaS, tactile interactions, and craft-driven web experiences.',
+  role: 'Website Developer · Designer · Editor · Vibe Coder',
+  tagline: 'Crafting high-performance web applications, aesthetic design systems, and creative visual experiences.',
+  bio: 'Website Developer, Designer, Editor, and Vibe Coder blending modern front-end architecture, refined aesthetics, video/visual craft, and intuitive flow. Specializing in responsive web apps, interactive portfolios, and creative digital products.',
   availability: 'Available for new ventures & select Q3 design contracts',
   status: 'Available',
   location: 'Jakarta, Indonesia · Remote Worldwide',

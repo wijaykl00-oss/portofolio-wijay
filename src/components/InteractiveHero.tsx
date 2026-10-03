@@ -241,16 +241,15 @@ export const InteractiveHero: React.FC<InteractiveHeroProps> = ({ onOpenBooking,
 
       {/* Main headline - styled exactly as reference image */}
       <div className="relative z-10 max-w-4xl mx-auto mb-6">
-        <h1 className="text-4xl sm:text-6xl md:text-[68px] lg:text-[76px] font-[380] sm:font-normal tracking-[-0.035em] text-white leading-[1.08] text-balance">
-          I Build A.I. Automation<br />
-          that <span className="font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#d8b4fe] via-[#c084fc] to-[#a855f7] drop-shadow-[0_0_30px_rgba(192,132,252,0.55)]">accelerate</span> business<br />
-          growth.
+        <h1 className="text-4xl sm:text-6xl md:text-[68px] lg:text-[76px] font-[380] sm:font-normal tracking-[-0.035em] text-white leading-[1.12] text-balance">
+          Website Developer, Designer,<br />
+          Editor &amp; <span className="font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#d8b4fe] via-[#c084fc] to-[#a855f7] drop-shadow-[0_0_30px_rgba(192,132,252,0.55)]">Vibe Coder</span>.
         </h1>
       </div>
 
       {/* Sub-headline */}
       <p className="relative z-10 text-slate-400 text-base sm:text-lg md:text-[18px] font-normal leading-[1.65] max-w-2xl mx-auto mb-9">
-        Full-stack Product Engineer focusing on B2B tools and developer leverage. I create specialized micro-SaaS products that solve specific scaling pains.
+        Building high-performance web applications, aesthetic design systems, and creative visual experiences powered by modern code and intuitive vibes.
       </p>
 
       {/* Primary Action Buttons */}
