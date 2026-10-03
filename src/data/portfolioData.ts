@@ -19,9 +19,9 @@ export const HERO_ASSETS = {
 
 export const PROFILE_INFO = {
   name: 'Wijaya Kusuma Bangsa',
-  role: 'Website Developer · Designer · Editor · Vibe Coder',
+  role: 'Website Developer',
   tagline: 'Crafting high-performance web applications, aesthetic design systems, and creative visual experiences.',
-  bio: 'Website Developer, Designer, Editor, and Vibe Coder blending modern front-end architecture, refined aesthetics, video/visual craft, and intuitive flow. Specializing in responsive web apps, interactive portfolios, and creative digital products.',
+  bio: 'Website Developer blending modern front-end architecture, refined aesthetics, and intuitive user experiences. Specializing in responsive web apps, interactive portfolios, and creative digital products.',
   availability: 'Available for new ventures & select Q3 design contracts',
   status: 'Available',
   location: 'Jakarta, Indonesia · Remote Worldwide',
