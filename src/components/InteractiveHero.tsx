@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useCallback, useId } from 'react';
 import { ArrowDown, ArrowUpRight, Eye, Waves } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { HERO_ASSETS, PROFILE_INFO } from '../data/portfolioData';
+import Bitcoin3D from './Bitcoin3D';
 
 interface InteractiveHeroProps {
   onOpenBooking: () => void;
@@ -207,6 +208,9 @@ export const InteractiveHero: React.FC<InteractiveHeroProps> = ({ onOpenBooking,
         aria-hidden="true" 
         className="pointer-events-none absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-purple-700/20 blur-[80px] rounded-full" 
       />
+
+      {/* Interactive 3D Physics Bouncing Bitcoin */}
+      <Bitcoin3D containerRef={heroRef} />
 
 
       {/* Main 3-Column Layout: Left = Identitas & Role, Center = Wijaya Portrait, Right = Portfolio Card */}
