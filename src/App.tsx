@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { InteractiveHero } from './components/InteractiveHero';
 import { GlisteningRainBackground } from './components/GlisteningRainBackground';
+import { AboutSection } from './components/AboutSection';
 import { SelectedProjects } from './components/SelectedProjects';
 import { GallerySection } from './components/GallerySection';
 import { ExperienceTimeline } from './components/ExperienceTimeline';
@@ -47,6 +48,9 @@ export default function App() {
           onOpenBooking={handleOpenBooking}
           onExploreGallery={handleExploreGallery}
         />
+
+        {/* About Section (Profil & Filosofi) */}
+        <AboutSection />
 
         {/* Selected Featured Projects */}
         <SelectedProjects />

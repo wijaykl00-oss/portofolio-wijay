@@ -19,6 +19,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
   }, []);
 
   const navLinks = [
+    { label: 'Tentang', href: '#about' },
     { label: 'Projects', href: '#projects' },
     { label: 'Gallery', href: '#gallery' },
     { label: 'Experience', href: '#experience' },
@@ -34,50 +35,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           : 'py-5 bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Zone 1: Wordmark / Brand Identity */}
-        <a
-          href="#"
-          className="flex items-center gap-2.5 group transition-transform active:scale-95"
-        >
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center font-display font-bold text-xs text-white shadow-md shadow-purple-900/50 group-hover:rotate-6 transition-transform">
-            WK
-          </div>
-          <span className="font-display font-bold text-base sm:text-lg text-white tracking-tight group-hover:text-purple-300 transition-colors">
-            {PROFILE_INFO.name}
-          </span>
-        </a>
-
-        {/* Zone 2: Navigation Links */}
-        <nav className="hidden md:flex items-center gap-7 text-xs font-medium text-slate-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center relative">
+        {/* Navigation Links centered in modern glass pill */}
+        <nav className="hidden md:flex items-center gap-7 px-6 py-2 rounded-full bg-slate-900/70 border border-slate-800/80 backdrop-blur-md shadow-lg shadow-black/30 text-xs font-mono uppercase tracking-wider text-slate-300">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="hover:text-white transition-colors relative py-1 hover:underline decoration-purple-500 decoration-2 underline-offset-8"
+              className="hover:text-purple-300 transition-colors relative py-1 hover:underline decoration-purple-500 decoration-2 underline-offset-8"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        {/* Zone 3: Primary Actions (Available Pill + CTA) */}
-        <div className="hidden sm:flex items-center gap-3">
-          <button
-            type="button"
-            onClick={onOpenBooking}
-            className="group flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 hover:border-emerald-500/60 shadow-lg transition-all text-xs font-medium text-slate-200"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-            </span>
-            <span className="text-white font-semibold">Available</span>
-          </button>
-        </div>
-
-        {/* Mobile Hamburger */}
-        <div className="md:hidden flex items-center gap-2">
+        {/* Mobile Hamburger on the right */}
+        <div className="md:hidden flex items-center justify-end w-full">
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

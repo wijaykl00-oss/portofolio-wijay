@@ -230,13 +230,6 @@ export const InteractiveHero: React.FC<InteractiveHeroProps> = ({ onOpenBooking,
         className="pointer-events-none absolute top-48 left-1/2 -translate-x-[40%] laser-ray opacity-50"
       />
 
-      {/* Ghosted Giant 01 Background Watermark matching reference */}
-      <div 
-        aria-hidden="true"
-        className="pointer-events-none absolute right-4 sm:right-10 lg:right-16 top-14 sm:top-8 font-display font-black text-[180px] sm:text-[260px] lg:text-[340px] text-white/[0.03] select-none leading-none z-0 tracking-tighter"
-      >
-        01
-      </div>
 
       {/* Main 3-Column Layout: Left = Identitas & Role, Center = Wijaya Portrait, Right = Portfolio Card */}
       <div className="relative z-10 w-full max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 items-center gap-10 lg:gap-4 xl:gap-8 mb-16">
@@ -245,11 +238,11 @@ export const InteractiveHero: React.FC<InteractiveHeroProps> = ({ onOpenBooking,
             LEFT COLUMN (lg:col-span-4): IDENTITAS & ROLE
             ======================================================== */}
         <div className="lg:col-span-4 flex flex-col items-start text-left order-2 lg:order-1 pr-0 lg:pr-2">
-          {/* Top Tag: ■ 01 / IDENTITAS */}
+          {/* Top Tag: ■ IDENTITAS */}
           <div className="flex flex-col items-start mb-5">
             <div className="inline-flex items-center gap-2 font-mono text-xs sm:text-sm tracking-[0.24em] uppercase text-slate-300">
               <span className="w-2.5 h-2.5 bg-purple-500 inline-block shadow-[0_0_10px_rgba(168,85,247,0.7)]" />
-              <span>01 / IDENTITAS</span>
+              <span>IDENTITAS</span>
             </div>
             <div className="w-14 sm:w-16 h-[2px] bg-purple-500 mt-2" />
           </div>
@@ -325,19 +318,21 @@ export const InteractiveHero: React.FC<InteractiveHeroProps> = ({ onOpenBooking,
               transformStyle: 'preserve-3d',
               willChange: 'transform',
             }}
-            className="relative w-[280px] sm:w-[340px] lg:w-[360px] xl:w-[400px] aspect-[260/358] cursor-grab active:cursor-grabbing select-none touch-none transition-transform duration-75 ease-out"
+            className="relative w-[330px] sm:w-[420px] md:w-[460px] lg:w-[440px] xl:w-[500px] 2xl:w-[540px] aspect-[260/358] cursor-grab active:cursor-grabbing select-none touch-none transition-transform duration-75 ease-out"
           >
-            {/* Base Layer: Portrait WITHOUT glasses - transparent cutout */}
+            {/* Base Layer: Portrait WITHOUT glasses - razor sharp, clear, black eyes */}
             <img
               src={HERO_ASSETS.portraitClear}
               alt={PROFILE_INFO.name}
               referrerPolicy="no-referrer"
-              className="absolute inset-0 w-full h-full object-contain object-top pointer-events-none filter contrast-[1.06] saturate-[1.04] drop-shadow-[0_20px_40px_rgba(0,0,0,0.75)]"
+              className="absolute inset-0 w-full h-full object-contain object-top pointer-events-none filter contrast-[1.08] saturate-[1.03] drop-shadow-[0_24px_48px_rgba(0,0,0,0.8)]"
             />
 
-            {/* Reveal Layer: Portrait WITH purple sunglasses, masked with dynamic motion blur */}
+            {/* Reveal Layer: Portrait WITH purple sunglasses, masked dynamically when interactive or toggled */}
             <div
-              className="absolute inset-0 w-full h-full pointer-events-none transition-opacity duration-300"
+              className={`absolute inset-0 w-full h-full pointer-events-none transition-opacity duration-200 ${
+                forceReveal || isInteractive ? 'opacity-100' : 'opacity-0'
+              }`}
               style={{
                 maskImage: forceReveal ? 'none' : undefined,
                 WebkitMaskImage: forceReveal ? 'none' : undefined,
@@ -350,25 +345,9 @@ export const InteractiveHero: React.FC<InteractiveHeroProps> = ({ onOpenBooking,
                 src={HERO_ASSETS.portraitGlasses}
                 alt="Portrait with sunglasses revealed naturally"
                 referrerPolicy="no-referrer"
-                className="absolute inset-0 w-full h-full object-contain object-top pointer-events-none filter brightness-[1.03] contrast-[1.08] saturate-[1.05] drop-shadow-[0_20px_40px_rgba(0,0,0,0.75)]"
+                className="absolute inset-0 w-full h-full object-contain object-top pointer-events-none filter brightness-[1.03] contrast-[1.08] saturate-[1.05] drop-shadow-[0_24px_48px_rgba(0,0,0,0.8)]"
               />
             </div>
-
-            {/* Subtle liquid refraction glint with soft motion blur */}
-            {!forceReveal && (
-              <div
-                className="absolute pointer-events-none rounded-full transition-transform duration-75 ease-out"
-                style={{
-                  width: '190px',
-                  height: '145px',
-                  left: `${fluidPos.x - 95}px`,
-                  top: `${fluidPos.y - 72}px`,
-                  background: 'radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.08) 0%, rgba(192, 132, 252, 0.05) 50%, transparent 75%)',
-                  filter: `blur(${14 + Math.min(motionBlur.speed * 0.5, 6)}px)`,
-                  mixBlendMode: 'screen',
-                }}
-              />
-            )}
 
             {/* Rich dark contrast scrim seamlessly melting the lower body into the dark page */}
             <div 
@@ -502,19 +481,6 @@ export const InteractiveHero: React.FC<InteractiveHeroProps> = ({ onOpenBooking,
 
       </div>
 
-      {/* Verified Stats Bar (Tabular Numbers & Clean Aesthetic matching video) */}
-      <div className="relative z-10 w-full max-w-4xl p-6 sm:p-8 rounded-2xl glass-panel tech-grid-bg border border-slate-800/80 grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
-        {PROFILE_INFO.stats.map((stat, idx) => (
-          <div key={idx} className="flex flex-col">
-            <span className="text-xs uppercase tracking-wider font-mono text-slate-400 mb-1">
-              {stat.label}
-            </span>
-            <span className="text-2xl sm:text-3xl font-bold font-display text-white font-mono tabular-nums tracking-tight">
-              {stat.value}
-            </span>
-          </div>
-        ))}
-      </div>
     </section>
   );
 };
