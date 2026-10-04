@@ -198,10 +198,14 @@ export const InteractiveHero: React.FC<InteractiveHeroProps> = ({ onOpenBooking,
       onMouseLeave={handleHeroMouseLeave}
       className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col items-center text-center overflow-visible"
     >
-      {/* Subtle deep ambient background without aggressive neon glow */}
+      {/* Purple ambient background glow */}
       <div 
         aria-hidden="true" 
-        className="pointer-events-none absolute top-16 left-1/2 -translate-x-1/2 w-[700px] h-[360px] bg-gradient-to-b from-purple-900/10 to-transparent blur-[120px] rounded-full" 
+        className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-purple-800/40 via-purple-900/25 to-transparent blur-[100px] rounded-full" 
+      />
+      <div 
+        aria-hidden="true" 
+        className="pointer-events-none absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-purple-700/20 blur-[80px] rounded-full" 
       />
 
 
