@@ -36,13 +36,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center relative">
-        {/* Navigation Links centered in modern glass pill */}
-        <nav className="hidden md:flex items-center gap-7 px-6 py-2 rounded-full bg-slate-900/70 border border-slate-800/80 backdrop-blur-md shadow-lg shadow-black/30 text-xs font-mono uppercase tracking-wider text-slate-300">
+        {/* Navigation Links */}
+        <nav className="hidden md:flex items-center gap-8 text-xs font-mono uppercase tracking-wider text-slate-300">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="hover:text-purple-300 transition-colors relative py-1 hover:underline decoration-purple-500 decoration-2 underline-offset-8"
+              className="hover:text-white transition-colors relative py-1 hover:underline decoration-purple-500 decoration-2 underline-offset-8"
             >
               {link.label}
             </a>

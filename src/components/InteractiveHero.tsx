@@ -198,36 +198,10 @@ export const InteractiveHero: React.FC<InteractiveHeroProps> = ({ onOpenBooking,
       onMouseLeave={handleHeroMouseLeave}
       className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col items-center text-center overflow-visible"
     >
-      {/* Background ambient lighting and purple auroras */}
-      <div 
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 anamorphic-flare"
-      />
+      {/* Subtle deep ambient background without aggressive neon glow */}
       <div 
         aria-hidden="true" 
-        className="pointer-events-none absolute top-12 left-1/4 w-[650px] h-[480px] bg-gradient-to-tr from-purple-700/25 via-fuchsia-600/15 to-transparent blur-[90px] rounded-full bg-aurora-1" 
-      />
-      <div 
-        aria-hidden="true" 
-        className="pointer-events-none absolute top-36 right-1/4 w-[700px] h-[520px] bg-gradient-to-bl from-violet-600/25 via-purple-500/15 to-transparent blur-[100px] rounded-full bg-aurora-2" 
-      />
-      
-      {/* Multiple Sweeping Moving Laser Light Beams ("cahaya bergerak ditambah") */}
-      <div 
-        aria-hidden="true"
-        className="pointer-events-none absolute top-60 left-1/2 -translate-x-1/2 laser-ray-animated"
-      />
-      <div 
-        aria-hidden="true"
-        className="pointer-events-none absolute top-40 left-1/3 laser-ray-animated-2"
-      />
-      <div 
-        aria-hidden="true"
-        className="pointer-events-none absolute top-80 right-1/4 laser-ray-animated-3"
-      />
-      <div 
-        aria-hidden="true"
-        className="pointer-events-none absolute top-48 left-1/2 -translate-x-[40%] laser-ray opacity-50"
+        className="pointer-events-none absolute top-16 left-1/2 -translate-x-1/2 w-[700px] h-[360px] bg-gradient-to-b from-purple-900/10 to-transparent blur-[120px] rounded-full" 
       />
 
 
@@ -241,7 +215,7 @@ export const InteractiveHero: React.FC<InteractiveHeroProps> = ({ onOpenBooking,
           {/* Top Tag: ■ IDENTITAS */}
           <div className="flex flex-col items-start mb-5">
             <div className="inline-flex items-center gap-2 font-mono text-xs sm:text-sm tracking-[0.24em] uppercase text-slate-300">
-              <span className="w-2.5 h-2.5 bg-purple-500 inline-block shadow-[0_0_10px_rgba(168,85,247,0.7)]" />
+              <span className="w-2.5 h-2.5 bg-purple-500 inline-block shadow-sm" />
               <span>IDENTITAS</span>
             </div>
             <div className="w-14 sm:w-16 h-[2px] bg-purple-500 mt-2" />
@@ -280,7 +254,7 @@ export const InteractiveHero: React.FC<InteractiveHeroProps> = ({ onOpenBooking,
               transform: `translate3d(${-parallax.shiftX * 1.5}px, ${-parallax.shiftY * 1.5}px, 0)`,
               willChange: 'transform',
             }}
-            className="absolute -top-10 left-1/2 -translate-x-1/2 w-[340px] sm:w-[440px] h-[340px] sm:h-[440px] bg-gradient-to-b from-purple-600/35 via-violet-700/20 to-transparent blur-3xl rounded-full pointer-events-none transition-transform duration-75 ease-out"
+            className="absolute -top-10 left-1/2 -translate-x-1/2 w-[340px] sm:w-[440px] h-[340px] sm:h-[440px] bg-gradient-to-b from-purple-900/12 via-violet-950/8 to-transparent blur-3xl rounded-full pointer-events-none transition-transform duration-75 ease-out"
           />
 
           {/* SVG Definition with Subtle Directional Motion Blur Filter */}
@@ -424,7 +398,7 @@ export const InteractiveHero: React.FC<InteractiveHeroProps> = ({ onOpenBooking,
           <div className="flex flex-col items-start mb-5">
             <div className="inline-flex items-center gap-2 font-mono text-xs sm:text-sm tracking-[0.24em] uppercase text-slate-300">
               <span>PORTFOLIO //</span>
-              <span className="w-2.5 h-2.5 bg-purple-500 inline-block shadow-[0_0_10px_rgba(168,85,247,0.7)]" />
+              <span className="w-2.5 h-2.5 bg-purple-500 inline-block shadow-sm" />
             </div>
             <div className="w-14 sm:w-16 h-[2px] bg-purple-500 mt-2" />
           </div>
@@ -451,7 +425,7 @@ export const InteractiveHero: React.FC<InteractiveHeroProps> = ({ onOpenBooking,
               2024–Sekarang · INDONESIA
             </p>
             <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider text-purple-400 mt-2">
-              <span className="w-2 h-2 rounded-full bg-purple-400 shadow-[0_0_8px_rgba(192,132,252,0.9)] animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
               <span>AVAILABLE FOR PROJECTS</span>
             </div>
           </div>
@@ -461,7 +435,7 @@ export const InteractiveHero: React.FC<InteractiveHeroProps> = ({ onOpenBooking,
             <button
               type="button"
               onClick={onExploreGallery}
-              className="px-5 sm:px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white font-mono uppercase text-xs font-semibold tracking-wider flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all active:scale-95 cursor-pointer"
+              className="px-5 sm:px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white font-mono uppercase text-xs font-semibold tracking-wider flex items-center justify-center gap-2 shadow-md shadow-purple-950/40 transition-all active:scale-95 cursor-pointer"
             >
               <span>LIHAT PROYEK</span>
               <ArrowDown className="w-4 h-4" />

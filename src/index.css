@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: 'Space Grotesk', 'JetBrains Mono', monospace;
+  --font-display: 'JetBrains Mono', monospace;
   --font-sans: 'JetBrains Mono', monospace;
   --font-mono: 'JetBrains Mono', monospace;
 }
@@ -20,9 +20,8 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, h2, h3, .font-display {
-    font-family: 'Space Grotesk', 'JetBrains Mono', sans-serif;
-    letter-spacing: -0.02em;
+  h1, h2, h3, h4, h5, h6, p, span, a, button, input, textarea, select, label, li, .font-display, .font-sans, .font-mono {
+    font-family: 'JetBrains Mono', monospace !important;
   }
 }
 

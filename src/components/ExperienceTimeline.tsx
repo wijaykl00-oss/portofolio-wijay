@@ -15,18 +15,10 @@ export const ExperienceTimeline: React.FC = () => {
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className="relative rounded-3xl overflow-hidden glass-panel tech-grid-bg border border-slate-800/80 p-6 sm:p-10 shadow-2xl"
       >
-        {/* Ambient purple glowing aurora and laser streak */}
+        {/* Soft subtle dark ambient vignette */}
         <div 
           aria-hidden="true"
-          className="pointer-events-none absolute -top-12 left-1/3 w-[500px] h-[260px] bg-gradient-to-b from-purple-600/20 via-violet-800/10 to-transparent blur-3xl rounded-full"
-        />
-        <div 
-          aria-hidden="true"
-          className="pointer-events-none absolute top-10 right-10 laser-ray-animated opacity-70"
-        />
-        <div 
-          aria-hidden="true"
-          className="pointer-events-none absolute bottom-12 left-12 laser-ray opacity-40"
+          className="pointer-events-none absolute -top-12 left-1/3 w-[450px] h-[200px] bg-gradient-to-b from-purple-900/10 to-transparent blur-3xl rounded-full"
         />
 
         {/* Header */}
@@ -127,14 +119,10 @@ export const ExperienceTimeline: React.FC = () => {
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className="relative rounded-3xl overflow-hidden glass-panel tech-grid-bg border border-slate-800/80 p-6 sm:p-10 shadow-2xl scroll-mt-24"
       >
-        {/* Ambient blue/purple glow */}
+        {/* Soft subtle dark ambient vignette */}
         <div 
           aria-hidden="true"
-          className="pointer-events-none absolute -top-12 left-1/4 w-[450px] h-[220px] bg-gradient-to-b from-indigo-600/20 via-purple-700/10 to-transparent blur-3xl rounded-full"
-        />
-        <div 
-          aria-hidden="true"
-          className="pointer-events-none absolute top-8 right-16 laser-ray-animated opacity-60"
+          className="pointer-events-none absolute -top-12 left-1/4 w-[400px] h-[180px] bg-gradient-to-b from-indigo-900/10 to-transparent blur-3xl rounded-full"
         />
 
         {/* Header */}
